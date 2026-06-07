@@ -61,7 +61,7 @@ Final_project/
 ├── XAI Audit Pipeline and Security Benchmarking Dashboard Module/  # Member C
 │   ├── app.py                    # Streamlit SOC console
 │   ├── pipeline_integration.py   # B → A → C orchestration
-│   └── benchmark_corpus.py       # 40 EN-US benchmark emails
+│   └── benchmark_corpus.py       # 14 EN-US golden balanced test set
 ├── .env · .env.example
 ├── requirements.txt
 ├── run_dashboard.sh
@@ -117,18 +117,19 @@ Enter email in the **Email Analysis Console** on the main page, then click **Run
 | **Card 1** | Stage 1 | Inbound raw email · sanitized output · PII metadata · privacy PASS/FAIL |
 | **Card 2** | Stage 2 | Risk score (0.0–1.0) · PHISHING/BENIGN · MITRE ID · forensic context |
 | **Card 3** | Stage 3 | Threat token highlight · necessity perturbation · adversarial prompt (on audit fail) |
-| **Card 4** | Benchmark | 40 EN-US corpus · Precision / Recall / F1 · confusion matrix · PR curve |
+| **Card 4** | Benchmark | 14 EN-US golden set · Precision / Recall / F1 · confusion matrix · PR curve |
 | **Footer** | HITL | Security officer override / alert suppression |
 
 ---
 
 ## Card 4 · Security Benchmarking
 
-- **Corpus:** 40 pure English emails (20 Benign / 20 Phishing), locale `EN-US`
-- **Live batch:** Click **Run Live Benchmark (40 EN-US)** — runs Stage 1 mask → Stage 2 Gemini per email
-- **API pacing:** 4 s interval between Gemini calls (free-tier RPM defense; ~3–5 min total)
-- **Cache:** Scores are cached via `@st.cache_data`; adjusting the α threshold does **not** re-call Gemini
-- **Clear cache:** Use sidebar **Clear Results** or re-click **Run Live Benchmark**
+- **Corpus:** 14-email Golden Balanced Test Set (7 Benign / 7 Phishing), locale `EN-US`
+- **Live batch:** Click **Run Live Benchmark (14 EN-US Golden Set)** — Stage 1 mask → Stage 2 Gemini per email
+- **API pacing:** 5 s cooldown between Gemini calls (Anti-429; ~1 minute total with inference)
+- **Fallback:** On 429/errors, local heuristic scores (`[LIMIT_FALLBACK]` in terminal) — batch never crashes
+- **Cache:** Scores cached via `@st.cache_data`; adjusting α does **not** re-call Gemini
+- **Clear cache:** Sidebar **Clear Results** or re-click **Run Live Benchmark**
 
 Demo mode uses static mock scores for layout preview only.
 
@@ -190,7 +191,7 @@ Handled by root `requirements.txt` (streamlit, sklearn, matplotlib, pandas, etc.
 | Stage 2 shows BENIGN but evidence says `rate_limit_exceeded` | Gemini API failed — not a real verdict; retry after quota recovers |
 | Ollama timeout | Start `ollama serve`; Regex-only Stage 1 fallback still works |
 | `No module named 'torchvision'` | Harmless Streamlit/transformers noise; suppressed via `.streamlit/config.toml` |
-| Card 4 shows `—` for metrics | Live benchmark not run yet — click **Run Live Benchmark (40 EN-US)** |
+| Card 4 shows `—` for metrics | Live benchmark not run yet — click **Run Live Benchmark (14 EN-US Golden Set)** |
 | Conda `anaconda-auth` warning | Unrelated; use project `.venv` only |
 
 ---

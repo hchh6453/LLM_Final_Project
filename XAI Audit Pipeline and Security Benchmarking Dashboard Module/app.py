@@ -27,6 +27,7 @@ from sklearn.metrics import (
 
 from benchmark_corpus import (
     BENCHMARK_BENIGN_COUNT,
+    BENCHMARK_CORPUS_VERSION,
     BENCHMARK_PHISHING_COUNT,
     BENCHMARK_TOTAL,
     BENIGN_CORPUS,
@@ -44,8 +45,8 @@ from pipeline_integration import (
     run_member_b_stage,
 )
 
-BENCHMARK_CORPUS_VERSION = "40_en_us_v1"
 BENCHMARK_ABORT_KEY = "benchmark_abort_requested"
+BENCHMARK_RUN_LABEL = f"Run Live Benchmark ({BENCHMARK_TOTAL} EN-US Golden Set)"
 
 # Callback IDs (A/B/C) → Privacy-First narrative stages for console display
 STAGE_NARRATIVE: dict[str, dict[str, str | int]] = {
@@ -261,8 +262,8 @@ def _cached_evaluate_benchmark(
     progress_bar = st.progress(
         0.0,
         text=(
-            f"Evaluating Threat Vector 0/{total} — "
-            "[API Pacing Active] Initializing cloud gateway batch audit…"
+            f"Auditing English Threat Profile 0/{total} — "
+            "[Anti-429 Pacing Active] Initializing Privacy-First batch audit…"
         ),
     )
     status_line = st.empty()
@@ -273,7 +274,7 @@ def _cached_evaluate_benchmark(
         progress_bar.progress(
             done / count,
             text=(
-                f"Evaluating Threat Vector {done}/{count} — "
+                f"Auditing English Threat Profile {done}/{count} — "
                 "Stage 1 mask → Stage 2 Gemini cloud verdict…"
             ),
         )
@@ -289,16 +290,15 @@ def _cached_evaluate_benchmark(
         progress_bar.progress(
             done / count,
             text=(
-                f"Evaluating Threat Vector {done}/{count} — "
-                "[API Pacing Active] Holding "
-                f"{max(seconds_remaining, 0.0):.0f} seconds to comply with cloud gateway quotas…"
+                f"Auditing English Threat Profile {done}/{count} — "
+                "[Anti-429 Pacing Active] Cooldown mechanism engaged…"
             ),
         )
         status_line.markdown(
-            f'<p class="soc-context-line"><strong>API Pacing Active</strong> — '
-            f"Threat Vector {done}/{count} complete · "
-            f"holding {max(seconds_remaining, 0.0):.0f}s before next Gemini call "
-            f"(≥{BENCHMARK_API_PACING_SECONDS:.0f}s interval · free-tier RPM defense)</p>",
+            f'<p class="soc-context-line"><strong>Anti-429 Pacing Active</strong> — '
+            f"Threat Profile {done}/{count} complete · "
+            f"cooldown {max(seconds_remaining, 0.0):.0f}s before next Gemini call "
+            f"(≥{BENCHMARK_API_PACING_SECONDS:.0f}s interval · golden set {count} emails)</p>",
             unsafe_allow_html=True,
         )
 
@@ -318,11 +318,14 @@ def _cached_evaluate_benchmark(
     if not should_abort():
         progress_bar.progress(
             1.0,
-            text=f"Evaluating Threat Vector {total}/{total} — batch audit complete.",
+            text=(
+                f"Auditing English Threat Profile {total}/{total} — "
+                "golden set batch audit complete."
+            ),
         )
         status_line.markdown(
             f'<p class="soc-context-line"><strong>Batch complete</strong> — '
-            f"{total} English threat vectors scored · scores locked in cache "
+            f"{total} English threat profiles scored · scores locked in cache "
             "(adjust α threshold without re-calling Gemini).</p>",
             unsafe_allow_html=True,
         )
@@ -389,7 +392,7 @@ def resolve_benchmark_dataframe(mode: str) -> tuple[pd.DataFrame, str]:
 
 
 def build_benchmark_dataset() -> pd.DataFrame:
-    """Build the 40-record Pure English benchmark corpus (20 Benign / 20 Phishing)."""
+    """Build the 14-record Golden Balanced Test Set (7 Benign / 7 Phishing, EN-US)."""
     rows: list[dict] = []
     record_id = 1
 
@@ -2303,9 +2306,9 @@ def main() -> None:
             bm_run_col, bm_stop_col = st.columns(2)
             with bm_run_col:
                 if st.button(
-                    "Run Live Benchmark (40 EN-US)",
+                    BENCHMARK_RUN_LABEL,
                     width="stretch",
-                    help="Privacy-First batch: Stage 1 mask → Stage 2 Gemini per corpus email.",
+                    help="Privacy-First golden set: Stage 1 mask → Stage 2 Gemini per corpus email.",
                 ):
                     _request_live_benchmark_rerun()
                     st.rerun()
@@ -2330,9 +2333,9 @@ def main() -> None:
             )
         elif benchmark_source == "live_pending":
             benchmark_caption = (
-                f"Corpus: {BENCHMARK_TOTAL} Pure English emails · "
+                f"Corpus: {BENCHMARK_TOTAL} Pure English emails (Golden Balanced Set) · "
                 f"{BENCHMARK_BENIGN_COUNT} Benign / {BENCHMARK_PHISHING_COUNT} Phishing · "
-                f"Click **Run Live Benchmark (40 EN-US)** to start Gemini scoring"
+                f"Click **{BENCHMARK_RUN_LABEL}** to start Gemini scoring"
             )
         else:
             benchmark_caption = (
@@ -2345,9 +2348,10 @@ def main() -> None:
         if benchmark_source == "live_pending":
             render_soc_notice(
                 "info",
-                "Live mode uses mock scores until you click **Run Live Benchmark (40 EN-US)**. "
-                f"Each Gemini call is paced by **{BENCHMARK_API_PACING_SECONDS:.0f}s** to stay within "
-                "free-tier RPM limits (~40 emails ≈ 3+ minutes). "
+                f"Live mode uses mock scores until you click **{BENCHMARK_RUN_LABEL}**. "
+                f"Each Gemini call is paced by **{BENCHMARK_API_PACING_SECONDS:.0f}s** "
+                f"(~{max(BENCHMARK_TOTAL - 1, 0) * int(BENCHMARK_API_PACING_SECONDS)}s cooldown + inference · "
+                "Anti-429 tactical set). "
                 "Use **Stop Live API Jobs** in the sidebar to cancel a stuck batch.",
             )
         elif st.session_state.get(BENCHMARK_ABORT_KEY):

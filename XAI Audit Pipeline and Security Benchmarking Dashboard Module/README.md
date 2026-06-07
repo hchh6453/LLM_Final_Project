@@ -1,6 +1,6 @@
 # Member C — XAI Audit Pipeline & Security Benchmarking Dashboard
 
-Streamlit SOC console integrating Member A + B outputs with XAI auditing and 40-record EN-US evaluation.
+Streamlit SOC console integrating Member A + B outputs with XAI auditing and a 14-record EN-US golden benchmark set.
 
 ## Run dashboard
 
@@ -23,4 +23,4 @@ Or:
 |------|------|
 | `app.py` | Streamlit UI + XAI + benchmarking |
 | `pipeline_integration.py` | Privacy-First B → A → C orchestration |
-| `benchmark_corpus.py` | 40-record EN-US evaluation corpus |
+| `benchmark_corpus.py` | 14-record golden balanced test set (7/7) |
