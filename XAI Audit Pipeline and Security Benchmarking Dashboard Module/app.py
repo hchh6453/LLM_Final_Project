@@ -46,7 +46,7 @@ from pipeline_integration import (
 )
 
 BENCHMARK_ABORT_KEY = "benchmark_abort_requested"
-BENCHMARK_RUN_LABEL = f"Run Live Benchmark ({BENCHMARK_TOTAL} EN-US Golden Set)"
+BENCHMARK_RUN_LABEL = f"Run Live Benchmark ({BENCHMARK_TOTAL} Set)"
 
 # Callback IDs (A/B/C) → Privacy-First narrative stages for console display
 STAGE_NARRATIVE: dict[str, dict[str, str | int]] = {
@@ -1025,70 +1025,118 @@ def inject_soc_dark_theme() -> None:
             color: {SOC_EMPHASIS_INFO_FG} !important;
         }}
 
-        /* Pipeline stage status widget (st.status) — high-contrast header + body */
-        section[data-testid="stMain"] [data-testid="stStatusWidget"],
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] > div,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details {{
+        /* ── st.status pipeline progress (Streamlit 1.57 → stExpander) ───── */
+        section[data-testid="stMain"] [data-testid="stExpander"] {{
             background-color: {SOC_STATUS_BODY_BG} !important;
             border: 1px solid #484f58 !important;
-            border-left: 4px solid {SOC_EMPHASIS_INFO_BORDER} !important;
             border-radius: 10px !important;
-            color: {SOC_STATUS_HEADER_FG} !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details > summary {{
+        section[data-testid="stMain"] [data-testid="stExpander"] details {{
+            background: transparent !important;
+            border: none !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"] summary {{
             list-style: none !important;
             cursor: pointer !important;
             background-color: {SOC_STATUS_HEADER_BG} !important;
             border-bottom: 1px solid {SOC_BORDER} !important;
             padding: 0.65rem 0.85rem !important;
             border-radius: 9px 9px 0 0 !important;
+            color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details > summary::-webkit-details-marker,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details > summary::marker {{
-            color: {SOC_CYAN} !important;
+        section[data-testid="stMain"] [data-testid="stExpander"] summary *,
+        section[data-testid="stMain"] [data-testid="stExpander"] summary p,
+        section[data-testid="stMain"] [data-testid="stExpander"] summary span,
+        section[data-testid="stMain"] [data-testid="stExpander"] summary div {{
+            color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
+            background: transparent !important;
+            opacity: 1 !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details summary svg,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details summary svg path,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stStatusWidgetIcon"] svg,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stStatusWidgetIcon"] svg path {{
+        section[data-testid="stMain"] [data-testid="stExpander"] summary:hover,
+        section[data-testid="stMain"] [data-testid="stExpander"] details[open] > summary:hover {{
+            background-color: #30363d !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #58a6ff !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"] summary:hover *,
+        section[data-testid="stMain"] [data-testid="stExpander"] details[open] > summary:hover * {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background: transparent !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"] details[open] > summary {{
+            background-color: {SOC_STATUS_HEADER_BG} !important;
+            color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"] details[open] > summary * {{
+            color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
+            background: transparent !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"] summary svg,
+        section[data-testid="stMain"] [data-testid="stExpander"] summary svg path {{
             color: {SOC_CYAN} !important;
             fill: {SOC_CYAN} !important;
             stroke: {SOC_CYAN} !important;
         }}
 
-        /* Title row — near-white on dark gray (not blue-on-blue) */
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] summary,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] summary p,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] summary span,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] summary div,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stStatusWidgetLabel"],
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stStatusWidgetLabel"] * {{
-            color: {SOC_STATUS_HEADER_FG} !important;
-            background: transparent !important;
-            font-weight: 600 !important;
+        section[data-testid="stMain"] [data-testid="stExpander"] summary:hover svg,
+        section[data-testid="stMain"] [data-testid="stExpander"] summary:hover svg path,
+        section[data-testid="stMain"] [data-testid="stExpander"] details[open] > summary:hover svg,
+        section[data-testid="stMain"] [data-testid="stExpander"] details[open] > summary:hover svg path {{
+            color: #58a6ff !important;
+            fill: #58a6ff !important;
+            stroke: #58a6ff !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stSpinner"],
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stSpinner"] span,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stSpinner"] p,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stSpinner"] label {{
-            color: {SOC_STATUS_HEADER_FG} !important;
-        }}
-
-        /* Expanded body — block Streamlit default wash-out on markdown */
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details[open] > div,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stVerticalBlock"],
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stMarkdownContainer"] {{
+        section[data-testid="stMain"] [data-testid="stExpander"] [data-testid="stExpanderDetails"],
+        section[data-testid="stMain"] [data-testid="stExpander"] [data-testid="stExpanderDetails"] [data-testid="stMarkdownContainer"] {{
             background-color: {SOC_STATUS_BODY_BG} !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stMarkdownContainer"] p,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stMarkdownContainer"] div,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] [data-testid="stMarkdownContainer"] span {{
-            color: inherit !important;
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconSpinner"]) {{
+            border-left: 4px solid {SOC_EMPHASIS_INFO_BORDER} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) {{
+            border-left: 4px solid {SOC_EMPHASIS_PASS_BORDER} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary,
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary * {{
+            color: {SOC_STAGE_COMPLETE_FG} !important;
+            -webkit-text-fill-color: {SOC_STAGE_COMPLETE_FG} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary:hover,
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary:hover * {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary svg,
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary svg path,
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary:hover svg,
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconCheck"]) summary:hover svg path {{
+            color: #7ee787 !important;
+            fill: #7ee787 !important;
+            stroke: #7ee787 !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"]:has([data-testid="stExpanderIconError"]) {{
+            border-left: 4px solid {SOC_EMPHASIS_FAIL_BORDER} !important;
         }}
 
         .soc-stage-line {{
@@ -1100,10 +1148,7 @@ def inject_soc_dark_theme() -> None:
             border: 1px solid {SOC_BORDER};
         }}
 
-        .soc-stage-line strong {{
-            font-weight: 700 !important;
-            color: inherit !important;
-        }}
+        .soc-stage-line strong {{ font-weight: 700 !important; color: inherit !important; }}
 
         .soc-stage-running {{
             background: {SOC_STAGE_RUNNING_BG} !important;
@@ -1123,90 +1168,27 @@ def inject_soc_dark_theme() -> None:
             border-color: {SOC_EMPHASIS_WARN_BORDER} !important;
         }}
 
-        /* Stage log inside st.status — inherit panel fg/bg, block outer markdown overrides */
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-running,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-running *,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-running strong,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-running span,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-running p {{
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-line,
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-line * {{
+            background: transparent !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-running,
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-running * {{
             color: {SOC_STAGE_RUNNING_FG} !important;
             -webkit-text-fill-color: {SOC_STAGE_RUNNING_FG} !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-running {{
-            background: {SOC_STAGE_RUNNING_BG} !important;
-            border-color: {SOC_EMPHASIS_INFO_BORDER} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-complete,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-complete *,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-complete strong,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-complete span,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-complete p {{
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-complete,
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-complete * {{
             color: {SOC_STAGE_COMPLETE_FG} !important;
             -webkit-text-fill-color: {SOC_STAGE_COMPLETE_FG} !important;
         }}
 
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-complete {{
-            background: {SOC_EMPHASIS_PASS_BG} !important;
-            border-color: {SOC_EMPHASIS_PASS_BORDER} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-skipped,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-skipped *,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-skipped strong,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-skipped span,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-skipped p {{
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-skipped,
+        section[data-testid="stMain"] [data-testid="stExpander"] .soc-stage-skipped * {{
             color: {SOC_STAGE_SKIPPED_FG} !important;
             -webkit-text-fill-color: {SOC_STAGE_SKIPPED_FG} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line.soc-stage-skipped {{
-            background: {SOC_EMPHASIS_WARN_BG} !important;
-            border-color: {SOC_EMPHASIS_WARN_BORDER} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] .soc-stage-line * {{
-            background: transparent !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details > summary::marker,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"] details > summary::-webkit-details-marker {{
-            color: {SOC_CYAN} !important;
-        }}
-
-        /* Completed pipeline status — green border + chevron */
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]),
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) > div,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) details {{
-            border: 1px solid {SOC_EMPHASIS_PASS_BORDER} !important;
-            border-left: 4px solid {SOC_EMPHASIS_PASS_BORDER} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) details > summary {{
-            background-color: {SOC_EMPHASIS_PASS_BG} !important;
-            border-bottom-color: {SOC_EMPHASIS_PASS_BORDER} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) summary,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) summary *,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) [data-testid="stStatusWidgetLabel"],
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) [data-testid="stStatusWidgetLabel"] * {{
-            color: {SOC_STAGE_COMPLETE_FG} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) details summary svg,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) details summary svg path,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) [data-testid="stStatusWidgetIcon"] svg,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) [data-testid="stStatusWidgetIcon"] svg path {{
-            color: {SOC_STAGE_COMPLETE_FG} !important;
-            fill: {SOC_STAGE_COMPLETE_FG} !important;
-            stroke: {SOC_STAGE_COMPLETE_FG} !important;
-        }}
-
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) details > summary::marker,
-        section[data-testid="stMain"] [data-testid="stStatusWidget"]:has([data-testid="stStatusWidgetIconCheck"]) details > summary::-webkit-details-marker {{
-            color: {SOC_STAGE_COMPLETE_FG} !important;
         }}
 
         /* Bordered input console */
@@ -1273,16 +1255,23 @@ def inject_soc_dark_theme() -> None:
 
         [data-testid="stSidebar"] [data-testid="stRadio"] label p,
         [data-testid="stSidebar"] [data-testid="stRadio"] label span,
-        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label {{
+        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label,
+        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label p,
+        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label span {{
             color: #c9d1d9 !important;
+            -webkit-text-fill-color: #c9d1d9 !important;
             font-size: 0.92rem !important;
             font-weight: 500 !important;
+            opacity: 1 !important;
         }}
 
         [data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) p,
         [data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) span,
-        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) {{
+        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked),
+        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) p,
+        [data-testid="stSidebar"] [data-testid="stRadio"] div[role="radiogroup"] label:has(input:checked) span {{
             color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
             font-weight: 700 !important;
         }}
 
@@ -1291,11 +1280,12 @@ def inject_soc_dark_theme() -> None:
             border-color: #30363d !important;
         }}
 
-        /* Sidebar — Clear Results button */
-        [data-testid="stSidebar"] div.stButton > button,
-        [data-testid="stSidebar"] div.stButton > button[kind="secondary"] {{
+        /* Sidebar — Clear Results / Stop Live API Jobs buttons */
+        [data-testid="stSidebar"] div.stButton button,
+        [data-testid="stSidebar"] div.stButton button[data-testid="stBaseButton-secondary"] {{
             background-color: #21262d !important;
             color: {SOC_RED} !important;
+            -webkit-text-fill-color: {SOC_RED} !important;
             border: 1px solid #30363d !important;
             border-radius: 8px !important;
             font-weight: 700 !important;
@@ -1304,66 +1294,99 @@ def inject_soc_dark_theme() -> None:
             transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
         }}
 
-        [data-testid="stSidebar"] div.stButton > button:hover,
-        [data-testid="stSidebar"] div.stButton > button[kind="secondary"]:hover {{
+        [data-testid="stSidebar"] div.stButton button p,
+        [data-testid="stSidebar"] div.stButton button span,
+        [data-testid="stSidebar"] div.stButton button div {{
+            color: {SOC_RED} !important;
+            -webkit-text-fill-color: {SOC_RED} !important;
+            opacity: 1 !important;
+            background: transparent !important;
+        }}
+
+        [data-testid="stSidebar"] div.stButton button:hover,
+        [data-testid="stSidebar"] div.stButton button[data-testid="stBaseButton-secondary"]:hover {{
             background-color: #8b0000 !important;
             color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             border-color: #f85149 !important;
             box-shadow: 0 0 12px rgba(248, 81, 73, 0.35);
         }}
 
-        [data-testid="stSidebar"] div.stButton > button:active {{
+        [data-testid="stSidebar"] div.stButton button:hover p,
+        [data-testid="stSidebar"] div.stButton button:hover span {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }}
+
+        [data-testid="stSidebar"] div.stButton button:active {{
             background-color: #6b0000 !important;
             color: #ffffff !important;
             border-color: #f85149 !important;
         }}
 
-        /* Main console — Run / Load Sample / Clear Email buttons */
-        section[data-testid="stMain"] div.stButton > button {{
+        /* ── Main console buttons (Streamlit 1.57: stButton → wrapper → stBaseButton-*) ── */
+        section[data-testid="stMain"] div.stButton button {{
             border-radius: 8px !important;
             font-weight: 600 !important;
             font-size: 0.9rem !important;
             padding: 0.5rem 0.85rem !important;
             border: 1px solid #484f58 !important;
-            transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+            background-color: #21262d !important;
+            color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
         }}
 
-        section[data-testid="stMain"] div.stButton > button[kind="primary"] {{
+        section[data-testid="stMain"] div.stButton button p,
+        section[data-testid="stMain"] div.stButton button span,
+        section[data-testid="stMain"] div.stButton button div {{
+            color: #e6edf3 !important;
+            -webkit-text-fill-color: #e6edf3 !important;
+            opacity: 1 !important;
+            background: transparent !important;
+        }}
+
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"] {{
             background-color: #1f6feb !important;
             color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
             border-color: #388bfd !important;
         }}
 
-        section[data-testid="stMain"] div.stButton > button[kind="secondary"],
-        section[data-testid="stMain"] div.stButton > button:not([kind="primary"]) {{
-            background-color: #21262d !important;
-            color: #e6edf3 !important;
-            border-color: #484f58 !important;
-        }}
-
-        section[data-testid="stMain"] div.stButton > button[kind="primary"] p,
-        section[data-testid="stMain"] div.stButton > button[kind="primary"] span,
-        section[data-testid="stMain"] div.stButton > button[kind="primary"] div,
-        section[data-testid="stMain"] div.stButton > button[kind="secondary"] p,
-        section[data-testid="stMain"] div.stButton > button[kind="secondary"] span,
-        section[data-testid="stMain"] div.stButton > button[kind="secondary"] div,
-        section[data-testid="stMain"] div.stButton > button:not([kind="primary"]) p,
-        section[data-testid="stMain"] div.stButton > button:not([kind="primary"]) span,
-        section[data-testid="stMain"] div.stButton > button:not([kind="primary"]) div {{
-            color: inherit !important;
-        }}
-
-        section[data-testid="stMain"] div.stButton > button[kind="primary"]:hover {{
-            background-color: #388bfd !important;
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"] p,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"] span,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"] div {{
             color: #ffffff !important;
-            border-color: #58a6ff !important;
+            -webkit-text-fill-color: #ffffff !important;
         }}
 
-        section[data-testid="stMain"] div.stButton > button[kind="secondary"]:hover,
-        section[data-testid="stMain"] div.stButton > button:not([kind="primary"]):hover {{
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-secondary"]:hover,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-tertiary"]:hover {{
             background-color: #30363d !important;
-            color: #ffffff !important;
             border-color: #58a6ff !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }}
+
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-secondary"]:hover p,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-secondary"]:hover span,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-tertiary"]:hover p,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-tertiary"]:hover span {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }}
+
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"]:hover {{
+            background-color: #388bfd !important;
+            border-color: #58a6ff !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+        }}
+
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"]:hover p,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"]:hover span,
+        section[data-testid="stMain"] div.stButton button[data-testid="stBaseButton-primary"]:hover div {{
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
         }}
 
         .soc-hero {{
@@ -1570,83 +1593,50 @@ def inject_soc_dark_theme() -> None:
             margin: 0.6rem 0;
         }}
 
-        .soc-compliance-pass p,
-        .soc-compliance-pass span,
-        .soc-compliance-pass div,
-        .soc-compliance-pass strong,
-        .soc-compliance-pass li,
-        .soc-compliance-fail p,
-        .soc-compliance-fail span,
-        .soc-compliance-fail div,
-        .soc-compliance-fail strong,
-        .soc-compliance-fail li,
-        .soc-audit-pass p,
-        .soc-audit-pass span,
-        .soc-audit-pass div,
-        .soc-audit-pass strong,
-        .soc-audit-pass li,
-        .soc-audit-fail p,
-        .soc-audit-fail span,
-        .soc-audit-fail div,
-        .soc-audit-fail strong,
-        .soc-audit-fail li,
-        .soc-audit-skip p,
-        .soc-audit-skip span,
-        .soc-audit-skip div,
-        .soc-audit-skip strong,
-        .soc-audit-skip li,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass p,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass span,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass div,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass strong,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass li,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail p,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail span,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail div,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail strong,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail li,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass p,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass span,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass div,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass strong,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass li,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail p,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail span,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail div,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail strong,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail li,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip p,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip span,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip div,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip strong,
-        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip li {{
-            color: inherit !important;
-            background: transparent !important;
-        }}
+        .soc-compliance-pass, .soc-compliance-pass * {{ color: {SOC_EMPHASIS_PASS_FG} !important; }}
+        .soc-compliance-fail, .soc-compliance-fail * {{ color: {SOC_EMPHASIS_FAIL_FG} !important; }}
+        .soc-audit-pass, .soc-audit-pass * {{ color: {SOC_EMPHASIS_PASS_FG} !important; }}
+        .soc-audit-fail, .soc-audit-fail * {{ color: {SOC_EMPHASIS_WARN_FG} !important; }}
+        .soc-audit-skip, .soc-audit-skip * {{ color: {SOC_EMPHASIS_INFO_FG} !important; }}
 
         section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass {{
             background: {SOC_EMPHASIS_PASS_BG} !important;
-            color: {SOC_EMPHASIS_PASS_FG} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-pass * {{
+            background: transparent !important;
         }}
 
         section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail {{
             background: {SOC_EMPHASIS_FAIL_BG} !important;
-            color: {SOC_EMPHASIS_FAIL_FG} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-compliance-fail * {{
+            background: transparent !important;
         }}
 
         section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass {{
             background: {SOC_EMPHASIS_PASS_BG} !important;
-            color: {SOC_EMPHASIS_PASS_FG} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-pass * {{
+            background: transparent !important;
         }}
 
         section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail {{
             background: {SOC_EMPHASIS_WARN_BG} !important;
-            color: {SOC_EMPHASIS_WARN_FG} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-fail * {{
+            background: transparent !important;
         }}
 
         section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip {{
             background: {SOC_EMPHASIS_INFO_BG} !important;
-            color: {SOC_EMPHASIS_INFO_FG} !important;
+        }}
+
+        section[data-testid="stMain"] [data-testid="stMarkdownContainer"] .soc-audit-skip * {{
+            background: transparent !important;
         }}
 
         .soc-context-line {{
@@ -2307,6 +2297,8 @@ def main() -> None:
             with bm_run_col:
                 if st.button(
                     BENCHMARK_RUN_LABEL,
+                    type="primary",
+                    key="card4_run_benchmark",
                     width="stretch",
                     help="Privacy-First golden set: Stage 1 mask → Stage 2 Gemini per corpus email.",
                 ):
@@ -2315,6 +2307,8 @@ def main() -> None:
             with bm_stop_col:
                 if st.button(
                     "Stop Live Benchmark",
+                    type="secondary",
+                    key="card4_stop_benchmark",
                     width="stretch",
                     help="Abort in-flight benchmark and skip remaining Gemini calls.",
                 ):
@@ -2365,7 +2359,7 @@ def main() -> None:
             "Decision Threshold (Alpha)",
             min_value=0.0,
             max_value=1.0,
-            value=0.50,
+            value=0.87,
             step=0.01,
             help="Classify as Phishing (1) when predicted_score >= Alpha.",
             disabled=benchmark_source == "live_pending",
