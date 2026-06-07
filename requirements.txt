@@ -1,0 +1,26 @@
+# =============================================================================
+# Final Project — Integrated Pipeline Dependencies
+# Install: pip install -r requirements.txt
+# =============================================================================
+
+# --- Member C: XAI Dashboard (Streamlit SOC Console) ---
+streamlit>=1.28.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# --- Shared: env config & HTTP ---
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# --- Member A: MCP + Dual-layer RAG + Gemini LLM Judge ---
+google-genai>=1.0.0
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# --- Optional: faster Streamlit file reload on macOS ---
+watchdog>=3.0.0
+
+# --- Member B batch scripts only (not required for dashboard) ---
+# datasets>=2.14.0

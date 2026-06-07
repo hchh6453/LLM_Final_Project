@@ -1,0 +1,92 @@
+{
+  "total": 60,
+  "TP": 27,
+  "TN": 27,
+  "FP": 3,
+  "FN": 3,
+  "precision": 0.9,
+  "recall": 0.9,
+  "f1_score": 0.9,
+  "accuracy": 0.9,
+  "errors": [
+    {
+      "type": "FN",
+      "sender_domain": "unknown.com",
+      "email_body": "\nOnline Marketing Strategies\nNeed More Clients?\tIncrease Your Sales 15%-40% Every Month!\nTargeted E-mail Marketing Is A Proven Method For Return Sales\n  With a database of over 150 million \"targeted\" addresses, we can reach your potential clients\n  anywhere in the world.  Our staff creates interactive ad campaigns, specifically targeted to \n  your client base, and designed to produce staggering responses for your business.  A steady \n  lead source can make sure your sales team will consistently ",
+      "is_phishing": false,
+      "risk_score": 0.0,
+      "mitre_technique": "",
+      "why_malicious_context": "",
+      "high_risk_tokens": [],
+      "true_label": "phishing"
+    },
+    {
+      "type": "FN",
+      "sender_domain": "unknown.com",
+      "email_body": "important notice sat , 04 dec 2004 06 : 03 : 43 + 0200",
+      "is_phishing": false,
+      "risk_score": 0.1,
+      "mitre_technique": "",
+      "why_malicious_context": "The email lacks any suspicious content, deceptive intent, urgency, or requests for credentials or financial information. The subject and body appear to be a poorly formatted, potentially automated notification without clear malicious purpose.",
+      "high_risk_tokens": [],
+      "true_label": "phishing"
+    },
+    {
+      "type": "FN",
+      "sender_domain": "unknown.com",
+      "email_body": "empty",
+      "is_phishing": false,
+      "risk_score": 0.0,
+      "mitre_technique": "",
+      "why_malicious_context": "The email has an empty body, no urgency keywords, and no money request. The sender domain is also not extracted, which is not a suspicious signal per the rules. Therefore, there is no observable evidence of deceptive intent.",
+      "high_risk_tokens": [],
+      "true_label": "phishing"
+    },
+    {
+      "type": "FP",
+      "sender_domain": "unknown.com",
+      "email_body": "gtv weekly status update please find below the weekly status update for the gas trading vision project and the attached file for the updated project timelines . gtv status meeting attendees : zhiyong wei , russ severson , jeremy wong , geoff storey , jay krish , mike swaim , george grant , bill fortney , chuck ames . accomplishments : ? incorporating physical deal positions in tds : o changes for the view aggregation have been completed . o expandable total in cash position has been completed . ",
+      "is_phishing": true,
+      "risk_score": 0.85,
+      "mitre_technique": "T1647",
+      "why_malicious_context": "The email uses an empty subject and a generic sender domain (unknown.com) to send a fake 'weekly status update' for a 'gas trading vision project'. It mentions 'the attached file for the updated project timelines,' which, combined with the suspicious sender and subject, indicates an attempt to deliver a malicious attachment under the guise of legitimate business communication (pretexting).",
+      "high_risk_tokens": [
+        "weekly status update",
+        "attached file",
+        "updated project timelines"
+      ],
+      "true_label": "benign"
+    },
+    {
+      "type": "FP",
+      "sender_domain": "unknown.com",
+      "email_body": "gas transportation dave : attached is a proposal for firm transportation services that provide economic incentives to encourage sps to build a lateral from the nichols plant in potter co , tx to our transwestern panhandle lateral . as we have discussed , the proposal allows flexibility for receipt and delivery , yet provides rate assurance . thanks for your help , and if you have any questions please give me or michelle a call . sincerly , bob",
+      "is_phishing": true,
+      "risk_score": 0.9,
+      "mitre_technique": "T1566.001",
+      "why_malicious_context": "The email's body states 'attached is a proposal' and mimics ongoing business discussion ('as we have discussed'). Combined with an empty subject and unknown sender domain, this strongly indicates a spearphishing attempt. The goal is likely to deliver malware via a malicious attachment, leveraging social engineering to encourage opening.",
+      "high_risk_tokens": [
+        "attached is a proposal",
+        "as we have discussed"
+      ],
+      "true_label": "benign"
+    },
+    {
+      "type": "FP",
+      "sender_domain": "unknown.com",
+      "email_body": "update - reimbursement of individually billed items the use of cell phones and pagers has increased dramatically in the past few years . as a result the accounts payable department has seen a rapid increase in the number of invoices and vendors . with the higher volume , we have reviewed our processes in order to continue our rapid payment cycle . although we encourage vendors to address their invoices to individual employees , they often mail invoices directly to accounts payable . at times the",
+      "is_phishing": true,
+      "risk_score": 0.85,
+      "mitre_technique": "T1566.004",
+      "why_malicious_context": "The email discusses financial processes (reimbursement, invoices, accounts payable), a common target for BEC. It's incomplete and has an empty subject, suggesting a precursor to a fraudulent request. The 'Contains Money Request: True' flag indicates high financial risk, likely leading to payment redirection or invoice fraud.",
+      "high_risk_tokens": [
+        "reimbursement of individually billed items",
+        "accounts payable department",
+        "invoices and vendors",
+        "payment cycle",
+        "mail invoices directly to accounts payable"
+      ],
+      "true_label": "benign"
+    }
+  ]
+}

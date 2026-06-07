@@ -1,0 +1,15 @@
+.env
+*.env.local
+
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+MCP Phishing and BEC Detection Module/chroma_db/
+MCP Phishing and BEC Detection Module/venv/
+XAI Audit Pipeline and Security Benchmarking Dashboard Module/__pycache__/
+.streamlit/secrets.toml
+
+.DS_Store

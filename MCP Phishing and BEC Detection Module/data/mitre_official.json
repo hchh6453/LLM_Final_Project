@@ -1,0 +1,134 @@
+[
+  {
+    "id": "T1114",
+    "name": "Email Collection",
+    "description": "Adversaries may target user email to collect sensitive information. Emails may contain sensitive data, including trade secrets or personal information, that can prove valuable to adversaries. Emails may also contain details of ongoing incident response operations, which may allow adversaries to adjust their techniques in order to maintain persistence or evade defenses.(Citation: TrustedSec OOB Communications)(Citation: CISA AA20-352A 2021) Adversaries can collect or forward email from mail serve",
+    "indicators": "please send document, share internal report, provide financial data, send me the file, request for internal data, audit request, management requesting documents, please forward all emails"
+  },
+  {
+    "id": "T1204.002",
+    "name": "Malicious File",
+    "description": "An adversary may rely upon a user opening a malicious file in order to gain execution. Users may be subjected to social engineering to get them to open a file that will lead to code execution. This user action will typically be observed as follow-on behavior from [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001). Adversaries may use several types of files that require a user to execute them, including .doc, .pdf, .xls, .rtf, .scr, .exe, .lnk, .pif, .cpl, .reg, and .iso.(C",
+    "indicators": "double extension file, .exe disguised as pdf, macro enabled excel word, password protected zip with malware, open attachment to view, invoice.pdf.exe, contract.doc.exe, enable macros"
+  },
+  {
+    "id": "T1566.002",
+    "name": "Spearphishing Link",
+    "description": "Adversaries may send spearphishing emails with a malicious link in an attempt to gain access to victim systems. Spearphishing with a link is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of links to download malware contained in email, instead of attaching malicious files to the email itself, to avoid defenses that may inspect email attachments. Spearphishing may also involve social engineering techniques, such as posing as a tr",
+    "indicators": "click here, verify your account, login link, suspicious URL, shortened URL, lookalike website, http link in email body, reset password link, verify identity link, account suspended click"
+  },
+  {
+    "id": "T1598.003",
+    "name": "Spearphishing Link",
+    "description": "Adversaries may send spearphishing messages with a malicious link to elicit sensitive information that can be used during targeting. Spearphishing for information is an attempt to trick targets into divulging information, frequently credentials or other actionable information. Spearphishing for information frequently involves social engineering techniques, such as posing as a source with a reason to collect information (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [Comp",
+    "indicators": "fake survey link, credential phishing form, fake login page link, phishing form submission, harvest personal data via link, fake verification page"
+  },
+  {
+    "id": "T1566.001",
+    "name": "Spearphishing Attachment",
+    "description": "Adversaries may send spearphishing emails with a malicious attachment in an attempt to gain access to victim systems. Spearphishing attachment is a specific variant of spearphishing. Spearphishing attachment is different from other forms of spearphishing in that it employs the use of malware attached to an email. All forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this scenario, adversaries attach a file to the sp",
+    "indicators": "malicious attachment, invoice attachment, contract attachment, please open attached file, double extension .pdf.exe, macro-enabled Office document, password-protected zip attachment, download and open"
+  },
+  {
+    "id": "T1684",
+    "name": "Social Engineering",
+    "description": "Adversaries may use social engineering techniques to influence users to take actions that result in unauthorized access, approval of changes, disclosure of sensitive information, or execution of adversary-supplied instructions (i.e., introduction of malicious payloads or software), while minimizing technical indicators. \n\nAdversaries may leverage trust-building methods across multiple channels (e.g., executive, vendor, or help desk scenarios, including AI-enabled voice interactions) to prompt us",
+    "indicators": "email, executive"
+  },
+  {
+    "id": "T1036",
+    "name": "Masquerading",
+    "description": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools. Masquerading occurs when the name or location of an object, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. This may include manipulating file metadata, tricking users into misidentifying the file type, and giving legitimate task or service names.\n\nRenaming abusable system utilities to evade security monitor",
+    "indicators": "fake invoice, brand impersonation, fake IT notification, spoofed logo, fake bank email, fake government notification, fake HR communication, disguised as legitimate company"
+  },
+  {
+    "id": "T1560",
+    "name": "Archive Collected Data",
+    "description": "An adversary may compress and/or encrypt data that is collected prior to exfiltration. Compressing the data can help to obfuscate the collected data and minimize the amount of data sent over the network.(Citation: DOJ GRU Indictment Jul 2018) Encryption can be used to hide information that is being exfiltrated from detection or make exfiltration less conspicuous upon inspection by a defender.\n\nBoth compression and encryption are done prior to exfiltration, and can be performed using a utility, 3",
+    "indicators": "password protected zip, encrypted archive, password in email body, extract with password, protected rar file, secure attachment password"
+  },
+  {
+    "id": "T1647",
+    "name": "Plist File Modification",
+    "description": "Adversaries may modify property list files (plist files) to enable other malicious activity, while also potentially evading and bypassing system defenses. macOS applications use plist files, such as the <code>info.plist</code> file, to store properties and configuration settings that inform the operating system how to handle the application at runtime. Plist files are structured metadata in key-value pairs formatted in XML based on Apple's Core Foundation DTD. Plist files can be saved in text or",
+    "indicators": "legal threat, lawsuit warning, tax audit, court summons, regulatory penalty, merger announcement, fake legal notice, compliance deadline, government investigation, IRS notice, financial regulatory authority"
+  },
+  {
+    "id": "T1598.002",
+    "name": "Spearphishing Attachment",
+    "description": "Adversaries may send spearphishing messages with a malicious attachment to elicit sensitive information that can be used during targeting. Spearphishing for information is an attempt to trick targets into divulging information, frequently credentials or other actionable information. Spearphishing for information frequently involves social engineering techniques, such as posing as a source with a reason to collect information (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or",
+    "indicators": "spearphishing attachment info gathering, fake document requesting personal data"
+  },
+  {
+    "id": "T1534",
+    "name": "Internal Spearphishing",
+    "description": "After they already have access to accounts or systems within the environment, adversaries may use internal spearphishing to gain access to additional information or compromise other users within the same organization. Internal spearphishing is multi-staged campaign where a legitimate account is initially compromised either by controlling the user's device or by compromising the account credentials of the user. Adversaries may then attempt to take advantage of the trusted internal account to incr",
+    "indicators": "sent from real internal corporate email, colleague impersonation, internal domain sender, account already compromised, lateral movement, forwarded internal conversation"
+  },
+  {
+    "id": "T1566",
+    "name": "Phishing",
+    "description": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nAdversaries may send victims emails containing malicious attachments or links, typically to execute malic",
+    "indicators": "email, attachment, link, spoof"
+  },
+  {
+    "id": "T1078",
+    "name": "Valid Accounts",
+    "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Compromised credentials may be used to bypass access controls placed on various resources on systems within the network and may even be used for persistent access to remote systems and externally available services, such as VPNs, Outlook Web Access, network devices, and remote desktop.(Citation: volexity_0day_sophos_FW) Compromised credent",
+    "indicators": "stolen credentials used, account takeover, login from unknown location, hijacked webmail account, gmail yahoo outlook compromised, suspicious login detected, sent from compromised personal email"
+  },
+  {
+    "id": "T1585.001",
+    "name": "Social Media Accounts",
+    "description": "Adversaries may create and cultivate social media accounts that can be used during targeting. Adversaries can create social media accounts that can be used to build a persona to further operations. Persona development consists of the development of public information, presence, history and appropriate affiliations.(Citation: NEWSCASTER2014)(Citation: BlackHatRobinSage)\n\nFor operations incorporating social engineering, the utilization of a persona on social media may be important. These personas ",
+    "indicators": "homoglyph domain, lookalike domain, c0mpany instead of company, rn instead of m, paypa1 instead of paypal, misspelled domain, typosquatting, domain spoofing"
+  },
+  {
+    "id": "T1499",
+    "name": "Endpoint Denial of Service",
+    "description": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users. Endpoint DoS can be performed by exhausting the system resources those services are hosted on or exploiting the system to cause a persistent crash condition. Example services include websites, email services, DNS, and web-based applications. Adversaries have been observed conducting DoS attacks for political purposes(Citation: FireEye OpPoisonedHandover February 2016) and t",
+    "indicators": "fake login page, verify your Microsoft account, Google account suspended, bank login verification, corporate portal login, enter your credentials, account will be locked, verify identity"
+  },
+  {
+    "id": "T1598",
+    "name": "Phishing for Information",
+    "description": "Adversaries may send phishing messages to elicit sensitive information that can be used during targeting. Phishing for information is an attempt to trick targets into divulging information, frequently credentials or other actionable information. Phishing for information is different from [Phishing](https://attack.mitre.org/techniques/T1566) in that the objective is gathering data from the victim rather than executing malicious code.\n\nAll forms of phishing are electronically delivered social engi",
+    "indicators": "request for personal information, confirm your details, verify account information, survey about organization, ask for employee list, request credentials, please provide username password, fill out this form"
+  },
+  {
+    "id": "T1684.001",
+    "name": "Impersonation",
+    "description": "Adversaries may impersonate a trusted person or organization in order to persuade and trick a target into performing some action on their behalf. For example, adversaries may communicate with victims (via [Phishing for Information](https://attack.mitre.org/techniques/T1598), [Phishing](https://attack.mitre.org/techniques/T1566), or [Internal Spearphishing](https://attack.mitre.org/techniques/T1534)) while impersonating a known sender such as an executive, colleague, or third-party vendor. Establ",
+    "indicators": "CEO impersonation, CFO fraud, executive identity spoofing, wire transfer request, urgent payment, do not inform anyone, strictly confidential, cannot take calls, overseas, end of business, account number, bank transfer, pure social engineering no attachment no link"
+  },
+  {
+    "id": "T1585",
+    "name": "Establish Accounts",
+    "description": "Adversaries may create and cultivate accounts with services that can be used during targeting. Adversaries can create accounts that can be used to build a persona to further operations. Persona development consists of the development of public information, presence, history and appropriate affiliations. This development could be applied to social media, website, or other publicly available information that could be referenced and scrutinized for legitimacy over the course of an operation using t",
+    "indicators": "fake domain registration, attacker infrastructure, malicious domain setup"
+  },
+  {
+    "id": "T1204.001",
+    "name": "Malicious Link",
+    "description": "An adversary may rely upon a user clicking a malicious link in order to gain execution. Users may be subjected to social engineering to get them to click on a link that will lead to code execution. This user action will typically be observed as follow-on behavior from [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002). Clicking on a link may also lead to other execution techniques such as exploitation of a browser or application vulnerability via [Exploitation for Client Executi",
+    "indicators": "click to view document, download update, access your file here, shortened URL redirect, obfuscated link, drive-by download link, fake software update link"
+  },
+  {
+    "id": "T1566.003",
+    "name": "Spearphishing via Service",
+    "description": "Adversaries may send spearphishing messages via third-party services in an attempt to gain access to victim systems. Spearphishing via service is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of third party services rather than directly via enterprise email channels. \n\nAll forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this scenario, adversaries ",
+    "indicators": "LinkedIn message, WhatsApp phishing, Slack message attack, Teams message, social media phishing, SMS phishing, smishing, non-email platform, direct message"
+  },
+  {
+    "id": "T1598.001",
+    "name": "Spearphishing Service",
+    "description": "Adversaries may send spearphishing messages via third-party services to elicit sensitive information that can be used during targeting. Spearphishing for information is an attempt to trick targets into divulging information, frequently credentials or other actionable information. Spearphishing for information frequently involves social engineering techniques, such as posing as a source with a reason to collect information (ex: [Establish Accounts](https://attack.mitre.org/techniques/T1585) or [C",
+    "indicators": "spearphishing service link, third party service credential harvest, fake form via service platform"
+  },
+  {
+    "id": "T1684.002",
+    "name": "Email Spoofing",
+    "description": "Adversaries may fake, or spoof, a sender’s identity by modifying the value of relevant email headers in order to establish contact with victims under false pretenses.(Citation: Proofpoint TA427 April 2024) In addition to actual email content, email headers (such as the FROM header, which contains the email address of the sender) may also be modified. Email clients display these headers when emails appear in a victim's inbox, which may cause modified emails to appear as if they were from the spoo",
+    "indicators": "email header spoofing, DMARC abuse, SPF bypass, fake sender domain, forged From header, email spoofing to bypass authentication"
+  }
+]

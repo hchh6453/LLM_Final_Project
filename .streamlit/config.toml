@@ -1,0 +1,5 @@
+# Disable Streamlit's module path watcher.
+# Without this, importing sentence-transformers/transformers triggers Streamlit
+# to lazy-import vision submodules that require torchvision (not needed for text RAG).
+[server]
+fileWatcherType = "none"

@@ -1,0 +1,15 @@
+{
+  "sender_domain": "c0mpany-fake.com",
+  "email_body": "Dear Manager, this is the CEO. I am currently overseas in a meeting\nand cannot take calls. We have an urgent procurement that must be\ncompleted before end of business today. Please wire USD 50,000 to\naccount number 123-456-789. This is strictly confidential.\nDo not inform anyone else. Thank you.",
+  "is_phishing": true,
+  "risk_score": 0.98,
+  "mitre_technique": "T1684.001",
+  "why_malicious_context": "CEO impersonation, urgent wire request, fake domain, isolation tactic.",
+  "high_risk_tokens": [
+    "this is the CEO",
+    "urgent procurement",
+    "wire USD 50,000",
+    "strictly confidential",
+    "Do not inform anyone else"
+  ]
+}

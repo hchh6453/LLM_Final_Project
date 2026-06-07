@@ -1,0 +1,825 @@
+[
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "\nLIVE SEX SHOWSWET, HOT, HORNY GIRLS WAITING FOR YOU! THE HOTTEST LIVE SEX SHOWS! CLICK HERE TO ENTER NOW !CLICK HERE TO SEE THE SHOWS !to unsubscribe from this mailing list please reply to this email with the word \"remove\" in the subject line. --DeathToSpamDeathToSpamDeathToSpam--\n-------------------------------------------------------\nThis sf.net email is sponsored by:ThinkGeek\nWelcome to geek heaven.\nhttp://thinkgeek.com/sf\n_______________________________________________\nSpamassassin-Sighting",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1499",
+    "why_malicious_context": "The email uses explicit sexual content (\"LIVE SEX SHOWS\", \"WET, HOT, HORNY GIRLS\") as a lure to entice recipients to click embedded links. These links (\"CLICK HERE TO ENTER NOW !\", \"CLICK HERE TO SEE THE SHOWS !\") are malicious and likely lead to scam websites, premium adult content subscriptions, or pages designed to harvest credentials or payment information.",
+    "high_risk_tokens": [
+      "LIVE SEX SHOWS",
+      "WET, HOT, HORNY GIRLS WAITING FOR YOU!",
+      "CLICK HERE TO ENTER NOW !",
+      "CLICK HERE TO SEE THE SHOWS !"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "\nOnline Marketing Strategies\nNeed More Clients?\tIncrease Your Sales 15%-40% Every Month!\nTargeted E-mail Marketing Is A Proven Method For Return Sales\n  With a database of over 150 million \"targeted\" addresses, we can reach your potential clients\n  anywhere in the world.  Our staff creates interactive ad campaigns, specifically targeted to \n  your client base, and designed to produce staggering responses for your business.  A steady \n  lead source can make sure your sales team will consistently ",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "Hello, jm@neteze.comAs seen on NBC, CBS, and CNN, and even Oprah!  The health\ndiscovery that actually reverses aging while burning fat,\nwithout dieting or exercise!  This proven discovery has even\nbeen reported on by the New England Journal of Medicine.\nForget aging and dieting forever!  And it's Guaranteed!* Reduce body fat and build lean muscle WITHOUT EXERCISE!\n* Enhace sexual performance\n* Remove wrinkles and cellulite\n* Lower blood pressure and improve cholesterol profile\n* Improve sleep, v",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566.002",
+    "why_malicious_context": "The email uses highly exaggerated and deceptive health claims, promising \"reverses aging\" and \"burning fat without dieting or exercise.\" It attempts to establish false credibility by claiming endorsements from \"NBC, CBS, CNN, Oprah,\" and \"New England Journal of Medicine,\" which are common spam/scam tactics designed to lure recipients to a malicious site.",
+    "high_risk_tokens": [
+      "As seen on NBC, CBS, and CNN, and even Oprah!",
+      "reverses aging while burning fat, without dieting or exercise!",
+      "This proven discovery has even been reported on by the New England Journal of Medicine.",
+      "Guaranteed!*",
+      "Reduce body fat and build lean muscle WITHOUT EXERCISE!"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "confidential help . greetings i am gideon arap moi , the son of the former president of kenya mr daniel arap moi . i came to know you in the course of my search for a reliable and god fearing partner , and i decided to contact you , because i believe you are a reputable person and i feel you can help . me and my mother over this confidential matter . i count on your intergrity and honesty to be able to handle this business . my father , mr arap moi , was the former president of kenya . in east a",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1114",
+    "why_malicious_context": "The email uses a fabricated identity (son of former Kenyan president) to solicit trust and establish a confidential business matter. This is a common tactic in advance-fee fraud and BEC scams, aiming to lure the victim into a fraudulent transaction.",
+    "high_risk_tokens": [
+      "gideon arap moi",
+      "son of the former president of kenya",
+      "confidential matter",
+      "reliable and god fearing partner"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "Certain chances only come around every few\ndecades or so. This is one. Why you ask?Because home loan rates are headed up.Have you locked in the lowest rate, in almost\nthirty years, for your present home loan?Rates haven't been this low in a long time. They\nmay well never be this low again. This is your\nchance to secure a better future. You could\nliterally save enough money to buy that new car\nyou've been wanting or to take that special\nvacation. Why wouldn't you jump at this chance?There's no ne",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1647",
+    "why_malicious_context": "The email uses high-pressure language about limited-time opportunities for home loan rates to create a sense of urgency and entice the recipient into acting without proper scrutiny. This is a common pretexting tactic.",
+    "high_risk_tokens": [
+      "Certain chances only come around every few decades or so",
+      "home loan rates are headed up",
+      "locked in the lowest rate, in almost thirty years",
+      "Rates haven't been this low in a long time",
+      "They may well never be this low again",
+      "This is your chance to secure a better future",
+      "save enough money to buy that new car",
+      "take that special vacation",
+      "Why wouldn't you jump at this chance?"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "brand name and generic drugs floodgate bound tradesman granary climb frankfurt omega affect epilogue get any prescription drug you want ! absolutely no doctor ' s appointments needed ! lowest prices on brand name and generic drvgs ! stop getting promotional material here likewise motive imitable doltish ball superposable ruthenium wan operate purse",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566",
+    "why_malicious_context": "The email body contains spammy, nonsensical text mixed with an offer for prescription drugs without a doctor's appointment, and promises of lowest prices. This is typical of unsolicited pharmaceutical spam designed to lure users into potentially illegal or harmful transactions.",
+    "high_risk_tokens": [
+      "get any prescription drug you want",
+      "absolutely no doctor's appointments needed",
+      "lowest prices on brand name and generic drvgs"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "business loans & leasing of equipment do you know of a business that needs a cash loan ? we have fast fundings ! ! or might want to use lease financing for purchasing any type of equipment , computers , phones , office furniture , trucks , industrial machinery , medical equipment , etc . then use that equipment to put more $ $ on the bottom line . please give us a call at afr for any questions or to have more information and a application sent to you . call 305-382 - 8018 afr 's live polite cons",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email solicits business for loans and leasing with an unsolicited offer for fast funding. It includes a phone number and prompts the recipient to call for more information and an application, which are common tactics in phishing and BEC to bypass email security and initiate direct communication for potentially fraudulent transactions.",
+    "high_risk_tokens": [
+      "business loans & leasing of equipment",
+      "fast fundings",
+      "lease financing",
+      "purchasing any type of equipment",
+      "give us a call",
+      "afr for any questions",
+      "more information and a application sent to you",
+      "call 305-382 - 8018"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "Hello. I meant to contact http://taint.org webmaster,\nAm I correct, I hope?Actually, I am not quite sure... Did I or Natasha Fedorova write \nyou before to your other address? Anyway, now I am here instead of \nher too.So, my name is Oksana Svetlova, I live in St. Petersburg, Russia.I have an idea, how we could cooperate to mutual benefit, see, \npossibly you will find it interesting.People are seeking to cut costs with this economy slow-down, right?The thing is that I could get you in touch with d",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email attempts to establish a connection for potential cooperation, but the sender's domain is unknown and the mention of 'mutual benefit' in a broad economic context is a common tactic in BEC scams. The inclusion of a link to 'taint.org' is highly suspicious.",
+    "high_risk_tokens": [
+      "unknown.com",
+      "taint.org",
+      "cooperate to mutual benefit"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "important notice sat , 04 dec 2004 06 : 03 : 43 + 0200",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": "",
+    "why_malicious_context": "The email lacks any suspicious content, deceptive intent, urgency, or requests for credentials or financial information. The subject and body appear to be a poorly formatted, potentially automated notification without clear malicious purpose.",
+    "high_risk_tokens": [],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "authorization needed we tried to contact you earlier about flnanclng your home at a lower rate . i would like to let you know that we have gone ahead and started the preapproval process , here are the results : * account id : [ 220 - bruceg - 850 ] * negotiable amount : $ 95 , 118 to $ 249 , 976 * rate : 3 . 52 % - 5 . 32 % for more information or to have a broker contact you please visit : best regards , r . walls , account manager no future contact : http : / / swkgiddy . 1 - m - n . com / gon",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1534",
+    "why_malicious_context": "The email impersonates an account manager, discusses financial information, and includes a suspicious link disguised as a legitimate URL. The link's structure ('swkgiddy.1-m-n.com/gon') is highly indicative of a phishing attempt to lure the recipient to a fraudulent site.",
+    "high_risk_tokens": [
+      "authorization needed",
+      "flnanclng",
+      "account id",
+      "negotiable amount",
+      "rate",
+      "best regards",
+      "r . walls , account manager",
+      "http : / / swkgiddy . 1 - m - n . com / gon"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "\\ / 1 coddin . codeilne , vlaagrra , xanaa ; claal 1 s , \\ / allium charset = iso - 8859 - 1 \" > the here reading shining is . whom taught sugar , hot selling meds at cheeapall countriess shiiping \\ / iccodiin , codeiine , cialiis , xanaax , viaagrra , \\ / aliium , meridiia , phenteermine , zoloft , ambiien , celebrex , sooma teach & many more popular meds purposespeaking cllcck here to order out thus the gym speaking respect ? slow light side disappoint again . leader fire mischievous not profe",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email body contains obfuscated pharmaceutical keywords and nonsensical text, indicative of an attempt to bypass spam filters and lure users to illicit websites for potentially harmful substances. This is characteristic of phishing.",
+    "high_risk_tokens": [
+      "coddin",
+      "codeilne",
+      "vlaagrra",
+      "xanaa",
+      "claal",
+      "hot selling meds",
+      "cheeapall",
+      "countriess shiiping",
+      "iccodiin",
+      "codeiine",
+      "cialiis",
+      "xanaax",
+      "viaagrra",
+      "aliium",
+      "meridiia",
+      "phenteermine",
+      "zoloft",
+      "ambien",
+      "celebrex",
+      "sooma",
+      "cllcck here to order"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "breathtaking image for your company now working on your company ' s image ? start with a visual identity a key to the first good impression . we are here to help you ! we ' ll take part in buildinq a positive visuai imaqe of your company by creatinq an outstanding logo , presentabie stationery items and professionai website . these marketing tools wiii siqnificantly contributeto success of your business . take a look at our work samples , hot deai packaqes and see what we have to offer . we work",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1585.001",
+    "why_malicious_context": "The email body contains unusual character substitutions (e.g., 'buildinq', 'visuai', 'imaqe', 'wiii', 'siqnificantly', 'deai', 'packaqes') which is a common obfuscation tactic to evade spam filters. This, combined with the unsolicited nature and focus on company image, suggests an attempt to lure the recipient into engaging with a potentially malicious entity or service, possibly for further compromise or unauthorized data collection.",
+    "high_risk_tokens": [
+      "buildinq",
+      "visuai",
+      "imaqe",
+      "wiii",
+      "siqnificantly",
+      "deai",
+      "packaqes"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "custom design work corporate image can say a lot of things about your company . contemporary rhythm of life is too dynamic . sometimes it takes oniy several seconds for your company to be remembered or to be lost among competitors . get your logo , business stationery or website done riqht now ! fast turnaround : you will see severai iogo variants in three business days . satisfaction guaranteed : we provide uniimited amount of chanqes ; you can be sure : it wili meet your needs and fit your bus",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1585.001",
+    "why_malicious_context": "The email uses intentional misspellings and unusual character substitutions ('riqht', 'severai', 'iogo', 'uniimited', 'chanqes', 'bus') to bypass spam filters. This is a common tactic in phishing and BEC to mask malicious intent and is associated with establishing accounts for deceptive purposes.",
+    "high_risk_tokens": [
+      "riqht",
+      "severai",
+      "iogo",
+      "uniimited",
+      "chanqes",
+      "bus"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "save your money by getting an oem software ! need in software for your pc ? just visit our site , we might have what you need . . . best regards , alejandrina",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1114",
+    "why_malicious_context": "The email promotes the purchase of OEM software from an unknown source, which is a common tactic in phishing to lead users to malicious websites or trick them into purchasing counterfeit or harmful software. It lacks specific details and is designed to entice users to click on an external link. Although no explicit credential request is present, the intent to solicit a transaction from an untrusted source is evident.",
+    "high_risk_tokens": [
+      "oem software",
+      "visit our site"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "hot teen flasher sex spy over 100 , 000 voyeur images tons live hidden cams 50 , 000 + extreme movies total invasion of privacy click here for more ! sex spy is the number one site for complete invasion of privacy photos , videos and more ! these extreme voyeur photos have the hottest women caught on tape doing unthinkable acts ! these sluts have no clue we are watching ! click here for a free preview of the dumbest whores getting caught on camera ! remove me ashtray bertrand ductwork witt secre",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1204.001",
+    "why_malicious_context": "The email body contains highly explicit and vulgar content, which is a common tactic in phishing emails to overwhelm recipients and mask malicious links. The phrase 'click here for more !' and 'click here for a free preview' strongly suggest a malicious link.",
+    "high_risk_tokens": [
+      "hot teen flasher sex spy",
+      "voyeur images",
+      "live hidden cams",
+      "extreme movies",
+      "invasion of privacy",
+      "click here for more !",
+      "click here for a free preview",
+      "dumbest whores getting caught on camera"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "want a nintendo ds ?",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email is a direct, unsolicited offer with no context, resembling common phishing attempts to bait recipients into responding to potentially malicious follow-ups or inquiries.",
+    "high_risk_tokens": [
+      "want a nintendo ds ?"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "\n \n \nDID YOU KNOW? \nThat the average penis size when erect is only 5.7\" to 6\". \nOver 90% of men posses this size. \n  \nDID YOU KNOW? \nThat in a poll conducted by DurexTM Condoms, \n67% of women said they were unhappy with their lover's penis siz=\ne. Having a small penis can affect your self-image, and how you view yourself=\n and the world. \nIf you feel confident about your manhood, you approach the world different=\nly, \nwith extreme confidence and pride.LET US \nSHOW YOU H=\nOW!\nYOU can add signific",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566",
+    "why_malicious_context": "The email body contains unsolicited and explicit content related to sexual health and enhancement, designed to evoke emotional response and drive engagement. This is a common tactic in phishing and scams to lure users to malicious websites or offers.",
+    "high_risk_tokens": [
+      "average penis size when erect",
+      "90% of men posses this size",
+      "unhappy with their lover's penis size",
+      "Having a small penis can affect your self-image",
+      "approach the world differently",
+      "LET US SHOW YOU HOW",
+      "YOU can add signific"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "would you like to . . . . . . drive a new vehicle for free ? ? ? this is not hype or a hoax , there are hundreds of people driving brand new cars , suvs , minivans , trucks , or rvs . it does not matter to us what type of vehicle you choose . if you qualify for our program , it is your choice of vehicle , color , and options . we don ' t care . just by driving the vehicle , you are promoting our program . if you would like to find out more about this exciting opportunity to drive a brand new veh",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1566.001",
+    "why_malicious_context": "The email makes an unbelievable offer of a free new vehicle. This is a common tactic in phishing to lure victims into clicking malicious links or providing personal information. The sender domain is also suspicious.",
+    "high_risk_tokens": [
+      "would you like to . . . . . . drive a new vehicle for free ? ? ?",
+      "this is not hype or a hoax",
+      "if you qualify for our program",
+      "it is your choice of vehicle, color, and options",
+      "just by driving the vehicle, you are promoting our program"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "\nHello, \nPremium Phone Qualified \nBusiness Opportunity Leads\nIf you're spending money marketing a Business Opportunity or MLM,\nyou will definitely be interested in \nwhat we have to offer you. \nYou're tired of blindly spending money for leads and not having \nany idea what kind of response you'll get from it.Â  Sometimes\ncalling 100 people without one single signup!Â  Sometimes \ntalking to people who have been bombarded by bizop pitches\nto the point of them hanging up when you call!Â  (Leads overs",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email promotes a 'Business Opportunity' with vague promises and addresses common pain points of MLM/business opportunity marketers. The sender domain 'unknown.com' is highly suspicious and often used for spam or phishing. The content strongly suggests a lead generation scam or a setup for a further, more targeted phishing attempt.",
+    "high_risk_tokens": [
+      "Premium Phone Qualified",
+      "Business Opportunity Leads",
+      "spending money marketing a Business Opportunity or MLM",
+      "tired of blindly spending money for leads",
+      "leads overs"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "re : account # 51682 f hello , we sent you an email a while ago , because you now qualify for a new mortgage . you could get $ 300 , 000 for as little as $ 600 a month ! bad credit is no problem , you can pull cash out or refinance . please click on this link for free consultation by a mortgage broker : start saving here best regards , oliver gabriel for email removal , go here . papua meliorate synthetic masque adobe pendant appleby hazardous foodstuff procaine crimea wynn declarative blake ber",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1560",
+    "why_malicious_context": "The email promises a mortgage with no credit check and offers a link for a 'free consultation'. The suspicious string of words at the end, likely a honeypot or obfuscation, further indicates malicious intent. The presence of a link for a seemingly too-good-to-be-true financial offer is a common phishing tactic.",
+    "high_risk_tokens": [
+      "new mortgage",
+      "300,000 for as little as $ 600 a month",
+      "bad credit is no problem",
+      "pull cash out or refinance",
+      "click on this link for free consultation",
+      "start saving here",
+      "papua meliorate synthetic masque adobe pendant appleby hazardous foodstuff procaine crimea wynn declarative blake ber"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "welcome to toronto pharmac euticals , the net ' s most secure source for presc ription medicines made in the usa . . coincide confrere you can finally get * real * pain medic ation that works . we receive your orders and one of our 24 x 7 onboard us physicians will approve of your order ( 99 . 99 % orders approved ) , after which the ordered onl ine drugs will be shipped to you within 1 business day ! using your internet explorer browser copy and paste the site below into the address browser . w",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email promotes the sale of prescription medications online with claims of 'real' pain medication and a high approval rate. It instructs users to copy and paste a site into their browser, which is a common tactic for directing users to fraudulent websites.",
+    "high_risk_tokens": [
+      "toronto pharmac euticals",
+      "net ' s most secure source for presc ription medicines made in the usa",
+      "real pain medic ation",
+      "onl ine drugs will be shipped to you within 1 business day",
+      "copy and paste the site below into the address browser"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "save your money by getting an oem software ! need in software for your pc ? just visit our site , we might have what you need . . . best regards , astrid",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1566.002",
+    "why_malicious_context": "The email promotes discounted OEM software, which is a common tactic to lure users to potentially malicious websites offering cracked or pirated software. The sender domain is also 'unknown.com', which is suspicious.",
+    "high_risk_tokens": [
+      "save your money",
+      "oem software",
+      "visit our site"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "a superb experience for shopper of quality tablets we operate in this innovative business model . our chernist - site provides works as a middle man between rxmedical suppliers and individual customers . customers can purchase at these outstanding prices . we carry swift and proficient handling and carriage works . we supply highquality medicals on painfulness , swelling , dysfunctions from erectileorgans , muscular relaxation , discomforts , over - wt . and sleepingdisorder . unveil wonderful o",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email promotes the purchase of various medical products, including those for erectile dysfunction, using an unusual business model described as a 'middle man'. The language is poorly constructed and uses tokenization similar to spam, suggesting a deceptive intent to lure users to a fraudulent site.",
+    "high_risk_tokens": [
+      "quality tablets",
+      "innovative business model",
+      "chernist - site",
+      "rxmedical suppliers",
+      "outstanding prices",
+      "swift and proficient handling and carriage works",
+      "highquality medicals",
+      "painfulness",
+      "swelling",
+      "dysfunctions from erectileorgans",
+      "muscular relaxation",
+      "discomforts",
+      "over - wt",
+      "sleepingdisorder",
+      "unveil wonderful o"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "feel great at any time lund up to 80 % savings on xanax , valium , phentermine , viagra here for email removal , go here . bondage secondhand beware epimorphism drawn pause communal bryant dodecahedral cavemen degree lodowick primp continent deduce accuse stannous cancellingarmament vi mackinac apparel desorption accreditate cornish connally hecatomb gonzalez nitpick redound inscrutable demountable bronzy christian capstone jiltbumble warwick helix cryptanalyze adore scrooge why description excu",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1566.001",
+    "why_malicious_context": "The email body contains a long string of seemingly random words followed by drug names (xanax, valium, phentermine, viagra) and a mention of savings. This is a common tactic in phishing emails to obscure malicious intent and lure users with offers of regulated substances, often leading to malware or credential theft.",
+    "high_risk_tokens": [
+      "xanax",
+      "valium",
+      "phentermine",
+      "viagra",
+      "80 % savings"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "empty",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "The email has an empty body, no urgency keywords, and no money request. The sender domain is also not extracted, which is not a suspicious signal per the rules. Therefore, there is no observable evidence of deceptive intent.",
+    "high_risk_tokens": [],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "first - level designers available for you corporate image can say a lot of things about your company . contemporary rhythm of life is too dynamic . sometimes it takes oniy several seconds for your company to be remembered or to be lost among competitors . get your loqo , business stationery or website done right now ! fast turnaround : you will see severai iogo variants in three business days . satisfaction quaranteed : we provide uniimited amount of chanqes ; you can be sure : it will meet your",
+    "is_phishing": true,
+    "risk_score": 0.7,
+    "mitre_technique": "T1647",
+    "why_malicious_context": "The email body attempts to solicit a business service (logo, stationery, website design) with vague promises of fast turnaround and unlimited changes. The combination of an unknown sender domain and the unsolicited nature of the offer suggests a potential attempt to engage the recipient in a service that could be a precursor to a BEC attack or simply a fraudulent service.",
+    "high_risk_tokens": [
+      "first - level designers available for you",
+      "get your loqo , business stationery or website done right now !",
+      "fast turnaround : you will see severai iogo variants in three business days .",
+      "satisfaction quaranteed : we provide uniimited amount of chanqes"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "backpackers . net , generic vi @ gra . . . booth one time discount order for vl @ gra , clal 1 s ! vl @ gra discount order today its only $ 0 . 9 per dose . generic vi @ gra , 24 x 100 mg regular tabs ( 48 dozes ) only $ 26 . 00 new product 1 : generic viagra , 24 x 100 mg soft tabs ( 48 dozes ) what is soft tabs ? only $ 30 . 00 new product 2 : generic clal 1 s , 10 x 20 mg tadalafil what is soft clal 1 s ? only $ 38 . 00 special offer ! these prices are valid until 10 th of december ! vl @ gra",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1566.002",
+    "why_malicious_context": "The email body contains unsolicited offers for prescription medication (Viagra, Cialis) at extremely low prices, characteristic of an illegal online pharmacy phishing attempt. The use of unusual formatting and potential for malicious links to external sites are highly suspicious.",
+    "high_risk_tokens": [
+      "backpackers . net",
+      "generic vi @ gra",
+      "gra . . . booth",
+      "$ 0 . 9 per dose",
+      "$ 26 . 00",
+      "$ 30 . 00",
+      "$ 38 . 00",
+      "generic clal 1 s",
+      "vl @ gra discount order"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "hi paliourg want pills ? everything for you . lamar jxgqwstwt angie hi paliourg , we are your convenient , safe and private online source for fda approved prescriptions . valium 10 mg - [ 60 pills $ 279 . 99 ] [ 90 pills $ 329 . 99 ] [ 120 pills $ 369 . 99 ] xanax 1 mg - [ 30 pills $ 169 . 00 ] [ 60 pills $ 229 . 00 ] [ 90 pills $ 269 . 00 ] [ 120 pills $ 309 . 99 ] vicodin ( hydrocodone / apapl 0 mg / 500 mg ) - [ 30 pills $ 159 . 99 ] [ 60 pills $ 249 . 99 ] [ 90 pills $ 319 . 99 ] [ 90 pills ",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566.003",
+    "why_malicious_context": "The email promotes the sale of prescription drugs like Valium and Xanax without proper authentication or medical consultation. This is a common tactic for phishing, aiming to illicitly obtain financial information or sell counterfeit/harmful substances.",
+    "high_risk_tokens": [
+      "want pills",
+      "fda approved prescriptions",
+      "valium",
+      "xanax",
+      "vicodin"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "paliourg photoshop , windows , office . cheapy . top quality software : special offer # 1 : windows xp professional + microsoft office xp professional = only $ 80 special offer # 2 : adobe - photoshop 7 , premiere 7 , illustrator 10 = only $ 120 special offer # 3 : macromedia dreamwaver mx 2004 + flash mx 2004 = only $ 100 also : windows 2003 server windows 2000 workstation windows 2000 server windows 2000 advanced server windows 2000 datacenter windows nt 4 . 0 windows millenium windows 98 seco",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1204.002",
+    "why_malicious_context": "The email offers significantly discounted, likely pirated, software. The unusual pricing and product mix suggest illegal distribution or malware bundling. The mention of 'special offer' and various old Windows versions points to a potential lure.",
+    "high_risk_tokens": [
+      "paliourg photoshop",
+      "windows xp professional",
+      "microsoft office xp professional",
+      "adobe - photoshop 7",
+      "premiere 7",
+      "illustrator 10",
+      "macromedia dreamwaver mx 2004",
+      "flash mx 2004",
+      "windows 2003 server",
+      "windows 2000 workstation",
+      "windows 2000 server",
+      "windows 2000 advanced server",
+      "windows 2000 datacenter",
+      "windows nt 4 . 0",
+      "windows millenium",
+      "windows 98 seco",
+      "cheapy",
+      "special offer"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "esecure online pharmacies prescription medicine through an easy , secure and confidential environment . nothing deters a good man from doing what is honourable . nature made him , and then broke the mold . nature herself has never attempted to effect great changes rapidly .",
+    "is_phishing": true,
+    "risk_score": 0.8,
+    "mitre_technique": "T1534",
+    "why_malicious_context": "The email mentions 'esecure online pharmacies prescription medicine' which is a common lure for phishing and potentially BEC attacks. The sender domain is unknown.com, which adds to the suspicion.",
+    "high_risk_tokens": [
+      "esecure online pharmacies prescription medicine"
+    ],
+    "true_label": "phishing"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "> Now, to do this, we all know they have to be cracking the strong crypto used\n> on all transaction in order to process them... So this has some preaty heavy\n> implications, unless it's just BS.Anybody buying a box like this is undoubtledly going to integrate it into their\ncrypto infrastructure.  What's the point of putting in a box like this if it's\nnot an active participant in your security framework?> Or.... you could just not bloat it 20x to begin with. Nah! (that was the\n> whole point of XM",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": "The email discusses technical implications of crypto infrastructure and performance optimizations for a product (XM). It does not contain any deceptive intent, urgency manipulation, credential requests, or malicious links/attachments, making it appear benign.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "interesting article interesting article , especially since it came from britain . . . it does mention enron too . the next global city ? the blob that ate east texas jun 21 st 2001 houston from the economist print edition ( june 23 , 2001 ) for most outsiders , texas is a foreign country . its biggest city , though , might surprise the rest of the world when a texan in a big hat tells you how wonderful his home town is , reach for the salt . bob lanier , the former mayor of houston , isn ' t act",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "The email body appears to be an excerpt from an article, discussing cities and mentioning historical events. It lacks deceptive intent, urgency, or requests for credentials or financial information, aligning with benign content.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "' de proverbio ' news hi , i have some news regarding ' de proverbio ' and i intend to keep it brief for everybody 's sake . in april the book publisher has been separated from the journal and has now its own direct url , that is http : / / info . utas . edu . au / docs / flonta / dpbooks this month i have published there the ' book of proverbs ' ( bible ) in five languages : latin , english , french , german and italian . each chapter of one language is cross-referenced with the same chapter of",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": "The email content appears to be an informational announcement about a book publication. There are no signs of deceptive intent, urgency manipulation, credential requests, or malicious links/attachments. The provided URL is an academic domain.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "cfp : workshop \" intelligent information integration \" during ecai ' 98 please forward this message to colleagues who might be interested . we apologise if you receive multiple copies . - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - call for papers international and interdisciplinary workshop \" intelligent information integration \" http : / / www . tzi . org / grp / i3 / ws-ecai 98 25 august 1998 during th",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": null,
+    "why_malicious_context": null,
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "think that this and other articles confuse Socialism with Bureaucracy. Libertarianism as implemented in North America is not exactly the shining pinnacle of economic efficiency.Just try starting a telephone company in the US or (even worse) Canada. It can take a year or more to get the blessing of our own \"Permit Rajs\" at the FCC, PUC, and PTTs (or, in the decidedly more socialist leaning Canada, Industry Canada and the CRTC).Yet, despite all of this intense regulation and paper pushing, as well",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": null,
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "my new position i wanted to submit my notice of rotation to the \" fundamental analysis \" group and thank the fx and country risk group for giving me an opportunity to work in such exiting learning environment . i really enjoyed being part of the research group and hope to keep all of the relationships i have developed throughout my rotation . i am looking forward to my new position as an opportunity to learn more about the company and to try my abilities in a new environment . \" fundamental anal",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": "N/A",
+    "why_malicious_context": "The email appears to be a legitimate internal notification regarding a role change. It lacks common phishing indicators like urgency, money requests, or suspicious links. The sender domain is unknown, but the body content itself does not exhibit deceptive intent.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "reminder of coling-acl ' 98 workshop deadline ( cvir ' 98 ) call for papers coling-acl 1998 workshop content visualization and intermedia representations ( cvir ' 98 ) august 15 , 1998 university of montreal montreal , quebec , canada workshop description : in the last few years , multimedia systems have become available which integrate text , graphics , sound ( speech and non-speech audio ) , as well as animation . there are many different communities working on such systems ( e . g . , hyperme",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": "T1566.004",
+    "why_malicious_context": "The email appears to be a legitimate call for papers for an academic workshop. There are no indicators of deceptive intent, urgency manipulation, credential requests, or malicious links/attachments within the provided body content.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "URL: http://diveintomark.org/archives/2002/10/03.html#when_an_engineer_flaps_his_wings\nDate: 2002-10-03T01:31:51-05:00Remember that saying from chaos theory about how when a butterfly flap its \nwings, it can cause a hurricane a month later halfway around the world? As \nseveral people have already noted, Google has made some major changes in their \nmost recent update. The weblogging community was hit hard (for instance, I used \nto be the #1 \"mark\"[1]; I am now #6). The changes appear to be the re",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": "The email discusses changes in Google search algorithms and includes a link to an archived blog post about chaos theory and its application to web analytics. There is no deceptive intent, urgency manipulation, credential request, or malicious link/attachment.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "re : technical training at the houston energy expo ! vince : looks like an excellent value overall if they cover the same topics in these classes as in the enron internal classes . the website says that registering for one of the classes automatically registers you to the expo . i would like to recommend them to my team . did someone from our group already register for this ? thanks krishna . vince j kaminski 02 / 12 / 2001 01 : 50 pm to : pinnamaneni krishnarao / hou / ect @ ect cc : subject : ",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": null,
+    "why_malicious_context": null,
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "On Fri, 2002-08-16 at 20:58, Torsten Bronger wrote:> If I create an RPM according to one of the how-to's with having\n> Red Hat in mind, how big are my chances that it will also work\n> for the SuSE distribution, or others?  (I don't know how many\n> base on the RPM system.)\n> \n> Or what must I pay attention to when creating an RPM that should\n> work with the big distributions?One practice I've adopted is to list Requires: only when they're\nabsolutely necessary.  This will help because some package",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": null,
+    "why_malicious_context": "The email appears to be a forwarded discussion about RPM package creation for different Linux distributions. There are no indicators of phishing, BEC, or malicious intent within the provided content.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "asset sales chart please see the attached file that reflects the multiple for each asset sale . as you can see for assets that had losses , we show no multiple . additionally , there are some assets that have no ebitda at all ( that we are aware of ) , thus we show no multiple . please let me know if this is what you expected . thanks !",
+    "is_phishing": false,
+    "risk_score": 0.2,
+    "mitre_technique": "T1534",
+    "why_malicious_context": "The email discusses financial data and includes an attachment, which are common vectors. However, without a suspicious sender or explicit deception, the risk is moderate.",
+    "high_risk_tokens": [
+      "asset sales chart",
+      "attached file",
+      "assets that had losses",
+      "assets that have no ebitda"
+    ],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "use Perl Daily NewsletterIn this issue:\n    * Subscribe to The Perl Review+--------------------------------------------------------------------+\n| Subscribe to The Perl Review                                       |\n|   posted by pudge on Tuesday September 17, @08:00 (links)          |\n|   http://use.perl.org/article.pl?sid=02/09/17/121210               |\n+--------------------------------------------------------------------+[0]barryp writes \"You can now pledge a subscription to [1]The Perl Revie",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": null,
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "re : trading track offers all offers being confirmed as per thursday , additional 3 going out per john l today , expanded the number being brought into the program . thanks , karen . - - - - - original message - - - - - from : kitchen , louise sent : monday , november 05 , 2001 11 : 14 am to : buckley , karen subject : re : trading track offers what happened ? - - - - - - - - - - - - - - - - - - - - - - - - - - sent from my blackberry wireless handheld",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": "None",
+    "why_malicious_context": "The email discusses internal trading track offers and program expansions. It lacks urgent language, requests for money, or suspicious links/attachments. The sender domain is unknown but the content appears to be an internal communication.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "start date : 12 / 17 / 01 ; hourahead hour : 8 ; start date : 12 / 17 / 01 ; hourahead hour : 8 ; no ancillary schedules awarded . no variances detected . log messages : parsing file - - > > o : \\ portland \\ westdesk \\ california scheduling \\ iso final schedules \\ 2001121708 . txt",
+    "is_phishing": false,
+    "risk_score": 0.05,
+    "mitre_technique": null,
+    "why_malicious_context": "The email body consists of automated system log entries related to scheduling and system status, specifically noting 'no ancillary schedules awarded' and 'no variances detected'. It contains no deceptive intent, requests for personal information, financial transactions, or malicious links/attachments. This content aligns with benign automated reports seen in historical cases.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "proposed decision the gd article today regarding the proposed decision is a pretty good readers digest version of the order . susan and i spoke with jeff dasovich and mark baldwin yesterday , and the consensus of those conversations was that transwestern should remain involved in this proceeding only for purposes of implementation / documentation . jeff offered that he might send a letter to governor gray ' s office expressing both dismay and indignation that the cpuc didn ' t complete their tas",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "N/A",
+    "why_malicious_context": "The email body discusses a business-related proceeding, naming specific individuals and entities without any indicators of deception, urgency, credential requests, or malicious links/attachments. It appears to be a legitimate internal communication.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "Once upon a time, Mark wrote :> Hiya, I always seem to get errors when I do an \"apt update\", is this a \n> problem on the repository itself, or on my end, or possibly a timeout in \n> the connection due to my connection being a crappy modem?\n> \n> [root@spawn root]# apt-get update\n> Hit http://apt.nixia.no redhat/7.2/i386/base/pkglist.gnomehide\n> Hit http://apt.freshrpms.net redhat/7.2/i386/base/pkglist.os\n> Ign http://apt.freshrpms.net redhat/7.2/i386 release.os\n> Err http://apt.freshrpms.net redh",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": null,
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "gtv weekly status update please find below the weekly status update for the gas trading vision project and the attached file for the updated project timelines . gtv status meeting attendees : zhiyong wei , russ severson , jeremy wong , geoff storey , jay krish , mike swaim , george grant , bill fortney , chuck ames . accomplishments : ? incorporating physical deal positions in tds : o changes for the view aggregation have been completed . o expandable total in cash position has been completed . ",
+    "is_phishing": true,
+    "risk_score": 0.85,
+    "mitre_technique": "T1647",
+    "why_malicious_context": "The email uses an empty subject and a generic sender domain (unknown.com) to send a fake 'weekly status update' for a 'gas trading vision project'. It mentions 'the attached file for the updated project timelines,' which, combined with the suspicious sender and subject, indicates an attempt to deliver a malicious attachment under the guise of legitimate business communication (pretexting).",
+    "high_risk_tokens": [
+      "weekly status update",
+      "attached file",
+      "updated project timelines"
+    ],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "gas transportation dave : attached is a proposal for firm transportation services that provide economic incentives to encourage sps to build a lateral from the nichols plant in potter co , tx to our transwestern panhandle lateral . as we have discussed , the proposal allows flexibility for receipt and delivery , yet provides rate assurance . thanks for your help , and if you have any questions please give me or michelle a call . sincerly , bob",
+    "is_phishing": true,
+    "risk_score": 0.9,
+    "mitre_technique": "T1566.001",
+    "why_malicious_context": "The email's body states 'attached is a proposal' and mimics ongoing business discussion ('as we have discussed'). Combined with an empty subject and unknown sender domain, this strongly indicates a spearphishing attempt. The goal is likely to deliver malware via a malicious attachment, leveraging social engineering to encourage opening.",
+    "high_risk_tokens": [
+      "attached is a proposal",
+      "as we have discussed"
+    ],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "2002 it systems development allocations rob , please review the attached listing and advise if you agree to the project and amount listed as billings that enron north america will receive in 2002 for support of this effort . i ' m at x 30352 if you have any questions . thanks !",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "book vince , ? i have made contact with fiona grant , director public relations and communications enron europe limited , and she mentioned that there are some changes to your bios , which are located both on the cover and in the preliminary section in \" about the authors \" . ? we would appreciate it if you could help in ? collecting or passing along these edits ? since these ? are ? the only items delaying the printing of the book . ? thanks vince . ? regards , julie ? ?",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": null,
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "vince , i hope you are well . until today , i did not know there was another kaminski at enron . perhaps you know him already but i found him in the enron address book his first name is jim . i am enrolled in the above mandatory program and i have nominated you in the peer / colleague category , to provide feedback on me . i do not know the nature of the questions you would be required to respond to but sometime soon you would receive an e - mail asking you for your input . i know your plate is ",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": null,
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "re : christmas basket list here is the updated list that we have for christmas . the orders will be placed on dec . 12 th . the orders will arrive at the enron building dec . 19 th . and all outside orders will arrive before dec . 22 nd . please inform , if this is okay . thanks kevin moore i will discuss cost with vince after meeting with bill on friday . kevin g moore 12 / 01 / 2000 09 : 26 am to : vince j kaminski / hou / ect @ ect , shirley crenshaw / hou / ect @ ect , mike a roberts / hou /",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "epenthesis rules do epenthesis rules ever plausibly epenthesize more than one segment at a given position ? my suspicion is that they only insert a \" c \" or a \" v \" , but conceivably there are cases where they epenthesize a cc or a vv . ( not an affricate or vowel with off-glide , but two separate segments . ) conceivably there are even epenthesis rules that insert a cv . any examples ? by \" plausibly \" i mean , would a reasonable linguist ever propose such an analysis ( as opposed , perhaps , t",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": null,
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "fw : good job - - - - - original message - - - - - from : belden , tim sent : monday , june 25 , 2001 9 : 08 am to : wolfe , greg subject : re : good job it ' s great to see when the team works together and gets things done . messages like this make me feel good about my job and this group . - - - - - original message - - - - - from : wolfe , greg sent : monday , june 18 , 2001 1 : 56 pm to : belden , tim subject : fw : good job - - - - - original message - - - - - from : gang , lisa sent : mond",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "update - reimbursement of individually billed items the use of cell phones and pagers has increased dramatically in the past few years . as a result the accounts payable department has seen a rapid increase in the number of invoices and vendors . with the higher volume , we have reviewed our processes in order to continue our rapid payment cycle . although we encourage vendors to address their invoices to individual employees , they often mail invoices directly to accounts payable . at times the",
+    "is_phishing": true,
+    "risk_score": 0.85,
+    "mitre_technique": "T1566.004",
+    "why_malicious_context": "The email discusses financial processes (reimbursement, invoices, accounts payable), a common target for BEC. It's incomplete and has an empty subject, suggesting a precursor to a fraudulent request. The 'Contains Money Request: True' flag indicates high financial risk, likely leading to payment redirection or invoice fraud.",
+    "high_risk_tokens": [
+      "reimbursement of individually billed items",
+      "accounts payable department",
+      "invoices and vendors",
+      "payment cycle",
+      "mail invoices directly to accounts payable"
+    ],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "fw : california capacity report for week of 9 / 10 - 9 / 14 transwestern ' s average deliveries to california were 972 mmbtu / d ( 89 % ) , with san juan lateral throughput at 800 mmbtu / d . total east deliveries averaged 423 mmbtu / d . el paso ' s average deliveries to california were 2036 mmbtu / d ( 70 % ) : - pg & etop , capacity of 1140 mmbtu / d , deliveries of 590 mmbtu / d ( 52 % ) - socalehr , capacity 1250 mmbtu / d , deliveries of 922 mmbtu / d ( 74 % ) - socaltop , capacity 539 mmb",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": null,
+    "why_malicious_context": null,
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "Tech Update TodayVITAL SIGNS FOR JULY 19, 2002\nDavid BerlindHey, thief! This laptop is lockedTry stealing my notebook and Caveo Anti-Theft will yell at you louder and louder -- before resorting to an unstoppable, ear-piercing screech. It's motion detection on a PC Card.\nAnd it's virtually foolproofAlso: Start-up has locks for Secure Notebook\nLatest from ZDNet News\nEarnings: Breaking the bottom line\nFeds set to enforce PC security\nMovement grows to boost Wi-Fi hot spots\nStates may be blocking e-c",
+    "is_phishing": false,
+    "risk_score": 0.05,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "start date : 12 / 18 / 01 ; hourahead hour : 4 ; start date : 12 / 18 / 01 ; hourahead hour : 4 ; no ancillary schedules awarded . no variances detected . log messages : parsing file - - > > o : \\ portland \\ westdesk \\ california scheduling \\ iso final schedules \\ 2001121804 . txt",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "we had a good session w top last night narrowing a numner of deal pts . we are doing the same w umb this am . we should know by this eve who is in the lead . hang in there and have fun w the maple leafs .",
+    "is_phishing": false,
+    "risk_score": 0.1,
+    "mitre_technique": "",
+    "why_malicious_context": "Email content is an informal business update lacking malicious links, attachments, credential requests, or deceptive urgency. It reads as a benign, internal communication.",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  },
+  {
+    "sender_domain": "unknown.com",
+    "email_body": "WORLD WIDE WORDS          ISSUE 301          Saturday 3 August 2002\n-------------------------------------------------------------------\nSent each Saturday to 15,000+ subscribers in at least 119 countries\nEditor: Michael Quinion, Thornbury, Bristol, UK      ISSN 1470-1448\n \n-------------------------------------------------------------------\n IF YOU RESPOND TO THIS MAILING, REMEMBER TO CHANGE THE OUTGOING\n   ADDRESS TO ONE OF THOSE IN THE 'CONTACT ADDRESSES' SECTION.\nContents\n---------------------",
+    "is_phishing": false,
+    "risk_score": 0.0,
+    "mitre_technique": "",
+    "why_malicious_context": "",
+    "high_risk_tokens": [],
+    "true_label": "benign"
+  }
+]
